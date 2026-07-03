@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pride and Prejudice | Digital Archive</title>
+    <link rel="stylesheet" href="style_2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 상단 고정 네비게이션 바 스타일 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .navbar a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #333;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .navbar a:hover {
+            color: #8d6e63;
+        }
+        /* 부드러운 스크롤 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a onclick="document.getElementById('synopsis').scrollIntoView()">Synopsis</a>
+        <a onclick="document.getElementById('reading-points').scrollIntoView()">Reading Points</a>
+        <a onclick="document.getElementById('movie').scrollIntoView()">Movie</a>
+        <a onclick="document.getElementById('recommendations').scrollIntoView()">Recommendations</a>
+    </nav>
+
+    <section class="page cover">
+        <div class="content">
+            <h1 class="fade-in">Pride and Prejudice</h1>
+            <p class="subtitle">"It is a truth universally acknowledged..."</p>
+            <div class="scroll-hint">Scroll Down</div>
+        </div>
+    </section>
+
+    <section class="page" id="synopsis">
+        <div class="content">
+            <h2 class="section-title">Synopsis & Characters</h2>
+            <div class="intro-box">
+                <p>By Jane Austen</p>
+            </div>
+            <div class="grid">
+                <div class="card clickable" onclick="openModal('plot')">
+                    <h3>Plot Synopsis</h3>
+                    <p>Discover the journey of the Bennet sisters and their quest for love and social standing in Regency England.</p>
+                </div>
+                <div class="card clickable" onclick="openModal('characters')">
+                    <h3>Key Characters</h3>
+                    <p>Meet Elizabeth Bennet, Mr. Darcy, and the diverse cast of characters that define this classic story.</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="page bg-alt" id="reading-points">
+        <div class="content">
+            <h2 class="section-title">Reading Points</h2>
+            <ul class="point-list">
+                <li><strong>The Trap of First Impressions:</strong> Reflect on the 'Primacy Effect'—how quickly do we judge others based on a single encounter?</li>
+                <li><strong>Focus on Growth:</strong> Pay attention to how the characters gradually confront their misunderstandings and change over time. Notice the emotional journey rather than just the outcome.</li>
+                <li><strong>Shifts in Tone and Relationships:</strong> Observe how changes in speech, manners, and tone reveal the evolving relationships between characters.</li>
+                <li><strong>Redefining the Tittle:</strong> After finishing the novel, ask yourself: Who was truly 'Proud' and who was 'Prejudiced'?</li>
+                <li><strong>Sensory Experience:</strong> Try different translations and listen to period-appropriate music to immerse yourself.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="page" id="movie">
+        <div class="content">
+            <h2 class="section-title">Movie : Pride & Prejudice (2005)</h2>
+            <div class="grid">
+               <div class="card no-hover">
+    <h3>Book vs. Movie</h3>
+    <table style="width:100%; border-collapse: collapse; margin-top: 20px; font-family: 'Lato', sans-serif;">
+        <thead>
+            <tr style="border-bottom: 2px solid #8d6e63; text-align: left;">
+                <th style="padding: 12px;">Aspect</th>
+                <th style="padding: 12px;">Original Novel</th>
+                <th style="padding: 12px;">2005 Film</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px; font-weight: bold;">Focus</td>
+                <td style="padding: 12px;">Social satire, psychological insight</td>
+                <td style="padding: 12px;">Emotions, romance</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px; font-weight: bold;">Expression</td>
+                <td style="padding: 12px;">Irony, inner narration</td>
+                <td style="padding: 12px;">Visual atmosphere, silence and gaze</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-weight: bold;">Source of tension</td>
+                <td style="padding: 12px;">Dialogue and thought processes</td>
+                <td style="padding: 12px;">Speech and pauses</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+                <div class="card">
+                    <h3>Video</h3>
+                    <video width="100%" controls>
+                        <source src="video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page bg-final" id="recommendations">
+        <div class="content">
+            <h2 class="section-title">Curated Recommendations</h2>
+            <div class="grid-three">
+                <div class="card item clickable" onclick="openModal('reads')">
+                    <h3>📚 Similar Reads</h3>
+                    <p>If you enjoyed reading 'Pride and Prejudice…'</p>
+                </div>
+                <div class="card item clickable" onclick="document.getElementById('audioPlayer').play()">
+                    <h3>🎧 Soundtrack</h3>
+                    <p>Click to Play</p>
+                </div>
+            </div>
+            <footer class="final-footer">
+                <p>&copy; Pride & Prejudice Presentation Project</p>
+            </footer>
+            <audio id="audioPlayer">
+                <source src="sound1.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </section>
+
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body-text"></div>
+        </div>
+    </div>
+
+    <script>
+        // 기존 Scroll Dot 관련 스크립트 삭제됨
+
+        // 2. Modal Data (백틱 기호 오류 수정 포함)
+        const modalData = {
+            plot: `<h2>Plot Synopsis</h2>
+                <p>In 19th-century England, the Bennet family faces pressure to secure advantageous marriages for their five daughters. When the wealthy <strong>Mr. Bingley</strong> and his friend <strong>Mr. Darcy</strong> arrive in the neighborhood, their presence stirs excitement and tension.</p>
+                <p>The story follows <strong>Elizabeth Bennet</strong> as she navigates social expectations, family difficulties, and her own misconceptions of Mr. Darcy. Initially offended by his reserved and seemingly arrogant manner, she develops a strong dislike toward him. However, as misunderstandings are clarified and Darcy quietly intervenes in Lydia’s scandal, their relationship gradually shifts.</p>`,            
+            characters: `<h2>Key Characters</h2>
+    <div style="display:flex; flex-direction:column; gap:25px; margin-top:20px;">
+
+        <div style="display:flex; align-items:center; gap:20px;">
+            <img src="eliza.png" style="width:100px; border-radius:10px;">
+            <div>
+                <strong>Elizabeth Bennet :</strong>
+                Intelligent and witty, yet her confidence in her own judgment leads her to form a strong prejudice against Darcy.
+            </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:20px;">
+            <img src="darcy.png" style="width:100px; border-radius:10px;">
+            <div>
+                <strong>Mr. Darcy :</strong>
+                A wealthy gentleman whose high social status and reserved manner make him appear proud and arrogant to others.
+            </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:20px;">
+            <img src="jane.png" style="width:100px; border-radius:10px;">
+            <div>
+                <strong>Jane Bennet :</strong>
+                Elizabeth’s beautiful and kind-hearted elder sister, who consistently believes in the goodness of others.
+            </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:20px;">
+            <img src="lydia.png" style="width:100px; border-radius:10px;">
+            <div>
+                <strong>Lydia Bennet :</strong>
+                The youngest Bennet sister, impulsive and flirtatious, whose reckless decision to elope with Wickham creates a serious scandal for her family.
+            </div>
+        </div>
+     </div>`,                       
+            reads: `<h2>Similar Reads</h2>
+                <ul style="list-style:none; padding:0; line-height: 2.5; font-size: 1.2rem;">
+                    <li>📖 <strong>Wuthering Heights</strong> - Emily Brontë</li>
+                    <li>📖 <strong>Crandford</strong> - Elizabeth Gaskell</li>
+                    <li>📖 <strong>Jane Eyre</strong> - Charlotte Brontë</li>
+                </ul>`,                      
+            soundtrack: `<h2>Movie Soundtrack</h2>
+                <p style="font-size: 1.8rem; color: #8d6e63; text-align: center; margin-top: 30px;">
+                    <strong>🎧 JH</strong>
+                </p>`
+        };
+
+        function openModal(type) {
+            const modal = document.getElementById('infoModal');
+            const bodyText = document.getElementById('modal-body-text');
+            bodyText.innerHTML = modalData[type];
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target == modal) { closeModal(); }
+        };
+    </script>
+</body>
+</html>
